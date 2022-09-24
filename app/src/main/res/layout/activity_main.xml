@@ -4,4 +4,90 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"/>
+    android:background="#FFFFFF"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:text="DATA HEWAN KOSONG!"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.486"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/filterSemua"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/semua"
+        android:textSize="11sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/filterKambing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/kambing"
+        android:textSize="11sp"
+        app:layout_constraintStart_toEndOf="@+id/filterSemua"
+        app:layout_constraintTop_toTopOf="@+id/filterSemua" />
+
+    <Button
+        android:id="@+id/filterSapi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/sapi"
+        android:textSize="11sp"
+        app:layout_constraintStart_toEndOf="@+id/filterKambing"
+        app:layout_constraintTop_toTopOf="@+id/filterSemua" />
+
+    <Button
+        android:id="@+id/filterAyam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/ayam"
+        android:textSize="11sp"
+        app:layout_constraintStart_toEndOf="@+id/filterSapi"
+        app:layout_constraintTop_toTopOf="@+id/filterSemua" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/filterAyam"
+        app:layout_constraintStart_toStartOf="@+id/filterSemua"
+        app:layout_constraintTop_toBottomOf="@+id/filterSemua" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAddAnimal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+
+        android:layout_marginBottom="40dp"
+        android:clickable="true"
+        android:contentDescription="@string/app_name"
+        app:backgroundTint="#7D15D8"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:srcCompat="@drawable/addicon"
+        app:tint="@color/white" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
