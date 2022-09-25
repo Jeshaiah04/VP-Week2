@@ -14,10 +14,13 @@
         android:theme="@style/Theme.0706012110015_ModifiedAnimalList"
         tools:targetApi="31">
         <activity
-            android:name=".SplashScreen"
+            android:name=".FormActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

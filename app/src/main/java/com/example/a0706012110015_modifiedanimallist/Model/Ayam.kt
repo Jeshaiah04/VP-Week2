@@ -3,25 +3,32 @@ package com.example.a0706012110015_modifiedanimallist.Model
 import android.os.Parcel
 import android.os.Parcelable
 
-open class Ayam (override var nama: String?, override var usia: Int?): Hewan(), Parcelable {
-
-    override var jenis: String?
-        get() = "Ayam"
-        set(key) {}
-    override var gambar: String? = null
+open class Ayam(override var nama: String?,override var usia: Int?): Hewan(), Parcelable {
 
     constructor(parcel: Parcel) : this(
         parcel.readString(),
         parcel.readValue(Int::class.java.classLoader) as? Int
-    ) {
+    )
+
+    override var jenis:String?
+    get() ="Ayam"
+    set(value) {}
+
+    override fun suara():String {
+        return "Cockoroyok!"
+    }
+
+    override fun makan(tipe: Biji):String{
+        return "Ayam-Mu makan biji!"
+    }
+
+    override fun writeToParcel(parcel: Parcel, flags: Int) {
+        parcel.writeString(nama)
+        parcel.writeValue(usia)
     }
 
     override fun describeContents(): Int {
-        TODO("Not yet implemented")
-    }
-
-    override fun writeToParcel(p0: Parcel?, p1: Int) {
-        TODO("Not yet implemented")
+        return 0
     }
 
     companion object CREATOR : Parcelable.Creator<Ayam> {
@@ -35,3 +42,4 @@ open class Ayam (override var nama: String?, override var usia: Int?): Hewan(), 
     }
 
 }
+

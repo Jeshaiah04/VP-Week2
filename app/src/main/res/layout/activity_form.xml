@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F4B41A" >
+    android:background="#FFFFFF"
+    tools:context=".FormActivity">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
@@ -23,9 +24,10 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/HewanImage"
+                android:id="@+id/hewanImage"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
+                android:backgroundTint="#FFFFFF"
                 android:contentDescription="TODO"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -58,6 +60,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#FFFFFF"
+                android:hint="Nama"
+                app:hintTextColor="#FFFFFF"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
@@ -65,8 +69,8 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:backgroundTint="#FFFFFF"
-                    android:hint="Nama Hewan" />
+                    android:backgroundTint="#143d59"
+                    android:textColorHint="#000000" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -74,6 +78,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:hint="Usia"
+                app:hintTextColor="#FFFFFF"
                 app:layout_constraintEnd_toEndOf="@+id/InputNamaHewan"
                 app:layout_constraintStart_toStartOf="@+id/InputNamaHewan"
                 app:layout_constraintTop_toBottomOf="@+id/InputNamaHewan">
@@ -81,8 +87,9 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:backgroundTint="#FFFFFF"
-                    android:hint="Usia Hewan" />
+                    android:backgroundTint="#143d59"
+                    android:inputType="number"
+                    android:textColorHint="#000000" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <RadioGroup
@@ -99,25 +106,31 @@
                     android:id="@+id/radioButtonKambing"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:layout_marginStart="10sp"
                     android:text="Kambing"
                     android:textColor="#000000"
+                    android:textColorLink="#143d59"
                     tools:ignore="TouchTargetSizeCheck" />
 
                 <RadioButton
                     android:id="@+id/radioButtonSapi"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="15sp"
                     android:text="Sapi"
                     android:textColor="#000000"
+                    android:textColorLink="#143d59"
                     tools:ignore="TouchTargetSizeCheck" />
 
                 <RadioButton
                     android:id="@+id/radioButtonAyam"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="15sp"
                     android:layout_weight="0"
                     android:text="Ayam"
                     android:textColor="#000000"
+                    android:textColorLink="#143d59"
                     tools:ignore="TouchTargetSizeCheck" />
             </RadioGroup>
 
@@ -128,6 +141,8 @@
                 android:layout_marginTop="10dp"
                 android:backgroundTint="#143d59"
                 android:text="simpan"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#FFFFFF"
                 app:layout_constraintEnd_toEndOf="@+id/JenisHewan"
                 app:layout_constraintStart_toStartOf="@+id/JenisHewan"
                 app:layout_constraintTop_toBottomOf="@+id/JenisHewan" />
