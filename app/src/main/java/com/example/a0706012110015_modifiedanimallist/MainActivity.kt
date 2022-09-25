@@ -69,9 +69,9 @@ class MainActivity : AppCompatActivity(), EventListener, Click {
             hasil = ArrayHewan
         }
 
-        for(animal in ArrayHewan){
-            if(animal.jenis.equals(type)){
-                hasil.add(animal)
+        for(hewan in ArrayHewan){
+            if(hewan.jenis.equals(type)){
+                hasil.add(hewan)
             }
         }
         adapter = HewanListAdapter(hasil, this, this)
