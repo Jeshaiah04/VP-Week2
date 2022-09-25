@@ -10,6 +10,7 @@ import android.util.Log
 import android.view.MenuItem
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import com.example.a0706012110015_modifiedanimallist.Database.Data
 import com.example.a0706012110015_modifiedanimallist.Database.Data.Companion.ArrayHewan
 import com.example.a0706012110015_modifiedanimallist.Model.Ayam
 import com.example.a0706012110015_modifiedanimallist.Model.Hewan
@@ -30,6 +31,7 @@ class FormActivity: AppCompatActivity() {
         actionBar?.setDisplayHomeAsUpEnabled(true)
         listener()
         checkIfValuePassed()
+        GetIntent()
 
     }
 
@@ -111,8 +113,32 @@ class FormActivity: AppCompatActivity() {
             inputChecker(hewan!!)
         }
 
+    }
 
+    private fun GetIntent() {
+        position = intent.getIntExtra("position", -1)
+        if (position != -1) {
+            bind.buttonSimpan.text = "Simpan Perubahan"
+            val hewan = Data.ArrayHewan[position]
+            gambar = Data.ArrayHewan[position].gambar
+            display(hewan)
+        }
+    }
 
+    private fun display(hewan: Hewan) {
+        bind.InputNamaHewan.editText?.setText(hewan.nama)
+        bind.InputUsiaHewan.editText?.setText(hewan.usia.toString())
+
+        if(bind.radioButtonSapi.isChecked){
+            bind.radioButtonSapi.isChecked
+        }else if(bind.radioButtonAyam.isChecked){
+            bind.radioButtonAyam.isChecked
+        }else{
+            bind.radioButtonKambing.isChecked
+        }
+
+        if (gambar != "")
+            bind.hewanImage.setImageURI(Uri.parse(gambar))
     }
 
     private fun inputChecker(hewan: Hewan) {
@@ -156,3 +182,4 @@ class FormActivity: AppCompatActivity() {
     }
 
 }
+
