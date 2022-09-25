@@ -42,7 +42,7 @@
 
     <LinearLayout
         android:layout_width="315dp"
-        android:layout_height="231dp"
+        android:layout_height="290dp"
         android:layout_marginStart="50dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="50dp"
