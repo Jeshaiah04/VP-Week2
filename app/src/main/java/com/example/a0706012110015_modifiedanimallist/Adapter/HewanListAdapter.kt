@@ -16,7 +16,6 @@ class HewanListAdapter(val listHewan: ArrayList<Hewan>, val eventListener: Event
     RecyclerView.Adapter<HewanListAdapter.viewHolder>() {
 
     class viewHolder (itemView: View, eventListener: EventListener, click: Click): RecyclerView.ViewHolder(itemView) {
-        //Bind
         val bind = ActivityCardBinding.bind(itemView)
 
         fun setData(data: Hewan, cardClick: EventListener, click: Click){
